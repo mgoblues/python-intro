@@ -31,10 +31,12 @@ def is_vulnerable(tower_height, tower_x, tower_y, target_x, target_y):
 
 	separation = math.sqrt(delta_x * delta_y)
 	if separation < tower_range:
-		print("The target is closer than the tower range, what should we return?")
-		return None 
-	else:
-		print("The target is further than the tower range, what should we return?")
-		return None
+		print("The target is closer than the tower range, decrease range")
+		return False
+	else:	
+		print("The target is further than the tower range, increase range")
+		return False
 
 print(is_vulnerable(100, 20, 3, 3, 10))
+print(is_vulnerable(10, 100, 10, 0, 130050))
+print(is_vulnerable(1,1,1,1001,300))
