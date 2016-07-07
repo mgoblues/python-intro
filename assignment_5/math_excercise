@@ -18,10 +18,23 @@ print(get_fall_time(20))
 
 
 #range= v(x) * t
+#∆x = Htower - Htarget
+#∆y = Dtarget - Dtower
 
 def is_vulnerable(tower_height, tower_x, tower_y, target_x, target_y):
 	muzzle_velocity = 300
-	time_in_air = None
-	tower_range = time_in_air * muzzle_velocity
-	delta_x = None
-	delta_y = None
+	time_in_air = math.sqrt((2 * tower_height) / (9.8))
+
+	tower_range = muzzle_velocity * time_in_air
+	delta_x = tower_x - tower_y
+	delta_y = target_y - target_x
+
+	separation = math.sqrt(delta_x * delta_y)
+	if separation < tower_range:
+		print("The target is closer than the tower range, what should we return?")
+		return None 
+	else:
+		print("The target is further than the tower range, what should we return?")
+		return None
+
+print(is_vulnerable(100, 20, 3, 3, 10))
