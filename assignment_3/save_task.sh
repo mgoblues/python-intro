@@ -6,5 +6,5 @@
 #newTask=$1
 #echo $newTask
 
-echo $@ >> ~/task_database.txt
+echo $@ >> ~/home/vagrant/task_database_python.txt
 
