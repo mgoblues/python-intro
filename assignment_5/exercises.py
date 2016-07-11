@@ -17,7 +17,7 @@ def to_celcius(degrees_fahrenheit):
 	output = (degrees_fahrenheit - 32) * (5 / 9)
 	return output
 
-print(to_fahrenheit(0))
+print((str(to_fahrenheit(0)) + " degrees F"))
 print(to_fahrenheit(50))
 print(to_fahrenheit(100))
 print(to_fahrenheit(150))
